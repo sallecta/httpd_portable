@@ -1,0 +1,7 @@
+*.ignore
+*.ignore.*
+**/*.cache
+ignore/
+*.ignore/
+src/
+portable/
