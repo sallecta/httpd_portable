@@ -13,7 +13,7 @@ fn_stoponerror ()
 
 path="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-path_p=$path'/portable'
+path_p=$path'/httpd_portable'
 
 sudo pkill httpd_portable
 
