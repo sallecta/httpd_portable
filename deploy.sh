@@ -35,6 +35,12 @@ fn_stoponerror $BASH_SOURCE $LINENO $?
 mkdir -p $path_p'/apache2/conf'
 fn_stoponerror $BASH_SOURCE $LINENO $?
 
+cp $path'/README.md' $path_p
+fn_stoponerror $BASH_SOURCE $LINENO $?
+
+cp $path'/LICENSE' $path_p
+fn_stoponerror $BASH_SOURCE $LINENO $?
+
 cp $path'/templates/httpd_portable.tpl.sh' $path_p'/httpd_portable.sh'
 fn_stoponerror $BASH_SOURCE $LINENO $?
 
