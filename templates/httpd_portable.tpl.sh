@@ -23,17 +23,20 @@ exe=$path'/bin/httpd_portable'
 
 export LD_LIBRARY_PATH=$path'/lib:'$LD_LIBRARY_PATH
 
-sed -i -e 's,^ServerRoot\s.*,ServerRoot '$path/apache2',g' $path'/apache2/conf/httpd.conf'
+sed -i -e 's,^Define\sportable_path\s.*,Define portable_path '$path',g' $path'/apache2/conf/httpd.conf'
 fn_stoponerror $BASH_SOURCE $LINENO $?
 
-sed -i -e 's,^DocumentRoot\s.*,DocumentRoot '$path/htdocs',g' $path'/apache2/conf/httpd.conf'
-fn_stoponerror $BASH_SOURCE $LINENO $?
+#sed -i -e 's,^ServerRoot\s.*,ServerRoot '$path/apache2',g' $path'/apache2/conf/httpd.conf'
+#fn_stoponerror $BASH_SOURCE $LINENO $?
 
-sed -i -e 's,^<Directory\s\"987887569DocumentRoot.*,<Directory '$path/htdocs'>,g' $path'/apache2/conf/httpd.conf'
-fn_stoponerror $BASH_SOURCE $LINENO $?
+#sed -i -e 's,^DocumentRoot\s.*,DocumentRoot '$path/htdocs',g' $path'/apache2/conf/httpd.conf'
+#fn_stoponerror $BASH_SOURCE $LINENO $?
 
-sed -i -e 's,^PidFile\s.*,PidFile '$path/apache2/httpd.pid',g' $path'/apache2/conf/httpd.conf'
-fn_stoponerror $BASH_SOURCE $LINENO $?
+#sed -i -e 's,^<Directory\s\"987887569DocumentRoot.*,<Directory '$path/htdocs'>,g' $path'/apache2/conf/httpd.conf'
+#fn_stoponerror $BASH_SOURCE $LINENO $?
+
+#sed -i -e 's,^PidFile\s.*,PidFile '$path/apache2/httpd.pid',g' $path'/apache2/conf/httpd.conf'
+#fn_stoponerror $BASH_SOURCE $LINENO $?
 
 mkdir -p $path'/apache2/logs'
 fn_stoponerror $BASH_SOURCE $LINENO $?
